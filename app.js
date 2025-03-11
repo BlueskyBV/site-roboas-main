@@ -77,34 +77,50 @@ document.addEventListener("DOMContentLoaded", function () {
     var closeBtn = document.querySelector(".close");
     var video = modal.querySelector("video"); // Select the video inside the modal
 
-    // Initially, ensure the modal is hidden
+    // Ensure the modal is hidden initially
     modal.style.display = "none";
 
-    // Show modal when button is clicked
+    if (video) {
+		  // Mute video by default
+        video.pause();  // Ensure it doesn't autoplay
+        video.currentTime = 0;  // Reset video position
+    }
+
+    // Function to open modal and play video
     btn.addEventListener("click", function (event) {
         event.preventDefault();
-        modal.style.display = "flex"; // Display modal
+        modal.style.display = "flex"; // Show modal
+
+        if (video) {
+			video.muted=false;
+            video.play(); // Play the video when modal opens
+        }
     });
 
-    // Close modal and reset video
+    // Function to close modal and reset video
     function closeModal() {
         modal.style.display = "none"; // Hide modal
+
         if (video) {
-            video.pause(); // Pause the video
-            video.currentTime = 0; // Reset video to the beginning
+            video.pause();
+			video.muted=false; // Pause video
+            video.currentTime = 0; // Reset to beginning
+            video.muted = true; // Mute the video again on close
         }
     }
 
     // Close modal when close button is clicked
     closeBtn.addEventListener("click", closeModal);
 
-    // Close modal if clicked outside the modal
+    // Close modal when clicking outside of the content
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             closeModal();
         }
     });
 });
+
+
 
 let slideIndex = 1;
 document.addEventListener("DOMContentLoaded", function () {
