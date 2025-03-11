@@ -242,7 +242,7 @@ c {
 #section-3 > .-sub > button::before {
 	content: attr(data-name);
 	display: block;
-	color: #fff;
+	color: #fefcfc;
 	font-weight: bold;
 	font-size: 1.25em;
 	text-shadow: 0 0 .25em #000;
@@ -257,7 +257,7 @@ c {
 #section-3 > .-sub > button::after {
 	content: "Citește mai mult";
 	display: block;
-	color: #fff;
+	color: #ffffff;
 	font-weight: bold;
 	font-size: 1.25em;
 	text-shadow: 0 0 .25em #000;
@@ -378,7 +378,7 @@ c {
 	border-radius: 100vw;
 	flex-shrink: 0;
 	background: #b3f;
-	color: #fff;
+	color: #ffffff;
 }
 
 #section-3 > .-about > div > .-content > .-descriere {
@@ -410,6 +410,10 @@ c {
 
 #section-3 > .-about > div > .-content > .-controls > button:nth-child(2) {
 	transform: rotate(180deg);
+}
+
+#section-3 > .-about > div > .-content {
+	color: #000;
 }
 
 #section-4 {
@@ -862,4 +866,3 @@ c {
 #section-9 {
 	text-align: center;
 }
-
