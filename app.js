@@ -122,12 +122,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+let slideIndex2 = 1;
+document.addEventListener("DOMContentLoaded", function () {
+    showSlides(slideIndex2);
+});
+
+function showSlides(n) {
+    let slide = document.getElementsByClassName("mySlide");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slide.length) { slideIndex2 = 1; }
+    if (n < 1) { slideIndex2 = slide.length; } 
+
+    for (let i = 0; i < slide.length; i++) {
+        slide[i].style.display = "none";
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slide[slideIndex2 - 1].style.display = "block";
+    dots[slideIndex2 - 1].classList.add("active");
+
+	let slides = document.getElementsByClassName("mySlides");
+    let dot = document.getElementsByClassName("dot");
+
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; } 
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (let i = 0; i < dot.length; i++) {
+        dot[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dot[slideIndex - 1].classList.add("active");
+}
+
+function plusSlides2(n) {
+    showSlides(slideIndex2 += n);
+}
+
+// Function for dot navigation
+function currentSlide2(n) {
+    showSlides(slideIndex2 = n);
+}
+
+
 let slideIndex = 1;
 document.addEventListener("DOMContentLoaded", function () {
     showSlides(slideIndex);
 });
 
-function showSlides(n) {
+/*function showSlides2(n) {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
 
@@ -144,7 +195,7 @@ function showSlides(n) {
 
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].classList.add("active");
-}
+}*/
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -154,8 +205,6 @@ function plusSlides(n) {
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
-
 
 
 
