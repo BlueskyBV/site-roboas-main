@@ -211,5 +211,3 @@ function currentSlide(n) {
 
 
 
-
-
