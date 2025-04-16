@@ -11,6 +11,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="app.js"></script>
@@ -29,7 +30,7 @@
 				<li><a href="#sponsori">Sponsori</a></li>
 				<li><a href="#realizari">Realizări</a></li>
 				<li><a href="#galerie">Galerie</a></li>
-				<li><a href="#contact">Social</a></li>
+				<li><a href="#social">Social</a></li>
 			</ul>
 			<button class="-openmenu"><img src="static/icon_menu.svg"></button>
 		</header>
@@ -217,9 +218,15 @@
 		</div>
 		<div id="section-9">
 			<h2 class="misc-mono">Robotul nostru</h2>
-			<div id="-content">
-				<div id="-left">
-					<iframe src="https://outlook195829.autodesk360.com/shares/public/SH286ddQT78850c0d8a4e08b50eceefffa10?mode=embed" width="65%" height="550" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0" align:left></iframe>
+			<div id="robot-content">
+				<div id="robot-left">
+					<iframe src="https://outlook195829.autodesk360.com/shares/public/SH286ddQT78850c0d8a4e08b50eceefffa10?mode=embed" width="500px" height="500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0" align:left></iframe>
+				</div>
+				<div id="robot-right">
+					<div class="glow-button">
+						<i class="fa-brands fa-github"></i>
+					</div>
+					<span class="glow-label">Cod pe GitHub</span>
 				</div>
 			</div>
 		</div>
@@ -487,22 +494,79 @@
 			  </div>
 		</div>
 		<div id="section-6" class="footer">
-			<div class="-content">
-				<div class="-left">
-					<h2 class="misc-mono"><span id="galerie"></span>Urmărește-ne pe Instagram!</h2>
-					<iframe src="https://www.instagram.com/p/CPSX2CzgJvr/embed" width="400" height="500" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+			<h2 class="misc-mono"><span id="social"></span>Social</h2>
+			<div id="desktop-only">
+				<div id="instagram-wrapper">
+					<div class="post-group">
+					  <iframe src="https://www.instagram.com/p/DHsoOjaMomu/embed" width="300" height="360" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+					  <iframe src="https://www.instagram.com/p/DHsoHLeMz6F/embed" width="300" height="360" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+					  <iframe src="https://www.instagram.com/p/DHsoDOVsLXG/embed" width="300" height="360" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+					</div>
+				  
+					<a href="https://www.instagram.com/roboas_19082?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="insta-block">
+					  	<div class="glow-button">
+							<i class="fa-brands fa-instagram"></i>
+						</div>
+					    <span class="glow-label">Instagram</span>
+					</a>
 				</div>
-				<div class="-right">
-					<h2 class="misc-mono"><span id="contact"></span>Contact</h2>
-					<ul>
-						<li><img src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/thumb_up/fill1/48px.svg" alt="Icon"> <a href="https://www.facebook.com/cerculroboas/" target="_blank">Pagina de Facebook</a> și<a href="https://www.instagram.com/roboas_19082/" target="_blank">Pagina de Instagram</a></li>
-						<li><img src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/mail/fill1/48px.svg" alt="Icon"> <span style="display:none;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;visibility:hidden;">email</span>roboas&#64;saguna.ro</li>
-						<li><img src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/language/fill1/48px.svg" alt="Icon"> <a href="https://www.saguna.ro/roboas">saguna.ro/roboas</a></li>
-						<li><img src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/location_on/fill1/48px.svg" alt="Icon"> Strada Șirul Mitropolit Andrei Șaguna, Nr. 1</li>
-					</ul>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11157.845537049632!2d25.58546705!3d45.6415555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b65948657bf%3A0xc9850a50e950e79e!2s%22Andrei%20%C5%9Eaguna%22%20National%20College!5e0!3m2!1sen!2sro!4v1661692474938!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+				<div id="social-wrapper">
+					<a href="https://www.tiktok.com/@roboas_009?_t=ZN-8vYfJMIWEY2&_r=1">
+						<div class="glow-button">
+							<i class="fa-brands fa-tiktok"></i>
+						</div>
+						<span class="glow-label">TikTok</span>
+					</a>
+					<a href="mailto:roboas@saguna.ro">
+						<div class="glow-button">
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+						<span class="glow-label">Mail: roboas@saguna.ro</span>
+					</a>
+					<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11157.845537049632!2d25.58546705!3d45.6415555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b65948657bf%3A0xc9850a50e950e79e!2s%22Andrei%20%C5%9Eaguna%22%20National%20College!5e0!3m2!1sen!2sro!4v1661692474938!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<div id="text-wrapper">
+						<h2>
+							Urmăriți evoluția noastră și luați legătura cu noi.
+						</h2>
+					</div>
 				</div>
 			</div>
+			<div id="mobile-only">
+				<div id="mobile-social-wrapper">
+					<a href="https://www.instagram.com/roboas_19082?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+						<div class="glow-button-mobile">
+						  <i class="fa-brands fa-instagram"></i>
+					  </div>
+					  <span class="glow-label">Instagram</span>
+				  </a>
+					<a href="https://www.tiktok.com/@roboas_009?_t=ZN-8vYfJMIWEY2&_r=1">
+						<div class="glow-button-mobile">
+							<i class="fa-brands fa-tiktok"></i>
+						</div>
+						<span class="glow-label">TikTok</span>
+					</a>
+					<a href="mailto:roboas@saguna.ro" id="mail">
+						<div class="glow-button-mobile">
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+						<span class="glow-label">roboas@saguna.ro</span>
+					</a>
+					<div id="text-wrapper2">
+						<h2>
+							Urmăriți evoluția noastră și luați legătura cu noi.
+						</h2>
+					</div>
+				</div>
+			</div>
+			<style media="all">
+				#mobile-only{display:none}
+				#desktop-only{display:block}
+				@media (max-width:800px){
+				#desktop-only {display:none}
+				#mobile-only {display:block}
+				}
+				</style>
 		</div>
 		<script src="ui/carousel.js"></script>
 	</body>
