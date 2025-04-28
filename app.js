@@ -47,29 +47,44 @@ var section3IsOpenUser = false;
 var section3CurrentlyOpenedUser = 0;
 
 function section3ToggleUser(member = 0) {
-	section3IsOpenUser = !section3IsOpenUser;
-	if(section3IsOpenUser) {
-		if(member < 0 || member >= membersData.length) {
-			section3ToggleUser();
-		} else {
-			section3CurrentlyOpenedUser = member;
-			var crtVarsta = Math.floor((new Date() * 1 - membersData[member].birth) / (1000 * 60 * 60 * 24 * 365.25));
-			var crtClasa = "a " + ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"][13 - (membersData[member].class - new Date().getFullYear())] + "-a";
-			document.querySelector("#section-3 > .-about > div > img").src = membersData[member].descriptionImage;
-			document.querySelector("#section-3 > .-about > div > .-content > h2").innerHTML = membersData[member].name;
-			document.querySelector("#section-3 > .-about > div > .-content .-age").innerHTML = crtVarsta + (crtVarsta >= 20 ? " de" : "") + " ani";
-			document.querySelector("#section-3 > .-about > div > .-content .-class").innerHTML = crtClasa + " " + membersData[member].classIndex;
-			document.querySelector("#section-3 > .-about > div > .-content .-passion").innerHTML = membersData[member].passions;
-			Array.from(document.querySelectorAll("#section-3 > .-about > div > .-content > .-roluri > *")).forEach(el => el.style.display = (membersData[member].roles.includes(parseInt(el.dataset.id)) ? "inline-block" : "none"));
-			document.querySelector("#section-3 > .-about > div > .-content .-descriere").innerHTML = membersData[member].description;
-			document.querySelector("#section-3 > .-about").style.opacity = 1;
-			document.querySelector("#section-3 > .-about").style.pointerEvents = "all";
-		}
-	} else {
-		document.querySelector("#section-3 > .-about").style.opacity = 0;
-		document.querySelector("#section-3 > .-about").style.pointerEvents = "none";
-	}
+    section3IsOpenUser = !section3IsOpenUser;
+    const isMobile = window.innerWidth <= 768; // Simple mobile detection
+
+    if (section3IsOpenUser) {
+        if (member < 0 || member >= membersData.length) {
+            section3ToggleUser();
+        } else {
+            section3CurrentlyOpenedUser = member;
+            var crtVarsta = Math.floor((new Date() * 1 - membersData[member].birth) / (1000 * 60 * 60 * 24 * 365.25));
+            var crtClasa = "a " + ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"][13 - (membersData[member].class - new Date().getFullYear())] + "-a";
+
+            // Fill in the data
+            document.querySelector("#section-3 > .-about > div > img").src = membersData[member].descriptionImage;
+            document.querySelector("#section-3 > .-about > div > .-content > h2").innerHTML = membersData[member].name;
+            document.querySelector("#section-3 > .-about > div > .-content .-age").innerHTML = crtVarsta + (crtVarsta >= 20 ? " de" : "") + " ani";
+            document.querySelector("#section-3 > .-about > div > .-content .-class").innerHTML = crtClasa + " " + membersData[member].classIndex;
+            document.querySelector("#section-3 > .-about > div > .-content .-passion").innerHTML = membersData[member].passions;
+            Array.from(document.querySelectorAll("#section-3 > .-about > div > .-content > .-roluri > *")).forEach(el => {
+                el.style.display = (membersData[member].roles.includes(parseInt(el.dataset.id)) ? "inline-block" : "none");
+            });
+            document.querySelector("#section-3 > .-about > div > .-content .-descriere").innerHTML = membersData[member].description;
+
+            // Mobile-specific behavior
+            if (isMobile) {
+                document.querySelector("#section-3 > .-about > div > img").style.display = "none"; // Hide image on mobile
+            } else {
+                document.querySelector("#section-3 > .-about > div > img").style.display = "block"; // Show image on desktop
+            }
+
+            document.querySelector("#section-3 > .-about").style.opacity = 1;
+            document.querySelector("#section-3 > .-about").style.pointerEvents = "all";
+        }
+    } else {
+        document.querySelector("#section-3 > .-about").style.opacity = 0;
+        document.querySelector("#section-3 > .-about").style.pointerEvents = "none";
+    }
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var modal = document.getElementById("video-modal");
