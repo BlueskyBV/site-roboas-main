@@ -73,7 +73,7 @@
 				  </article>
 				  <article class="main-post main-post--not-active">
 					<div class="main-post__image">
-					  <img src="static/robot-nesimtit.jpg" loading="lazy" />
+					  <img src="static/verticalSlider/robotHang.jpg" loading="lazy" />
 					</div>
 					<div class="main-post__content">
 					  <div class="main-post__tag-wrapper">
@@ -189,7 +189,7 @@
 				</div>
 				<div class="-right">
 					<div class="video-wrapper">
-						<video id="vertical-video" width="560" height="315" src="static/aftermovie regio.mp4" muted loop autoplay controls ><script>
+						<video id="vertical-video" width="560" height="315" src="static/aftermovie nationala.mp4" muted loop autoplay controls ><script>
 							const video = document.getElementById('vertical-video');
 						  
 							video.addEventListener('fullscreenchange', () => {
@@ -291,6 +291,7 @@
 				</ul>
 			</div>
 			<div class="-about" style="opacity: 0; pointer-events: none;">
+				<button onclick="section3ToggleUser(); section3ToggleUser(parseInt(section3CurrentlyOpenedUser) - 1);">&#10094;</button>
 				<div>
 					<img src="https://dummyimage.com/300">
 					<div class="-content">
@@ -313,12 +314,9 @@
 							<li data-id="2">Marketing & PR</li>
 						</ul>
 						<p class="-descriere">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<div class="-controls">
-							<button onclick="section3ToggleUser(); section3ToggleUser(parseInt(section3CurrentlyOpenedUser) - 1);"></button>
-							<button onclick="section3ToggleUser(); section3ToggleUser(parseInt(section3CurrentlyOpenedUser) + 1);"></button>
-						</div>
 					</div>
 				</div>
+				<button onclick="section3ToggleUser(); section3ToggleUser(parseInt(section3CurrentlyOpenedUser) + 1);">&#10095;</button>
 			</div>
 		</div>
 		<div id="section-4">
