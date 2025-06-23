@@ -872,7 +872,10 @@ c {
 		padding: 1rem 0;
 	}
 
-
+	#robot-left {
+		display: flex;
+		justify-content: flex-start;   /* still left */
+	}
 
 	#section-2 video{
 		width: 100%;
@@ -1139,6 +1142,15 @@ c {
 
 #robot-left, #robot-right {
 	flex: 1;
+}
+
+#robot-left {
+	display: flex;
+	justify-content: flex-start;  
+}
+
+#robot-left iframe {
+	margin: 0;          
 }
 
 #robot-right {
