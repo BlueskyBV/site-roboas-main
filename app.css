@@ -201,6 +201,27 @@ header > .-openmenu > img {
 	padding-bottom: 5vh;
 }
 
+#section-9 .-content {
+  display: flex;
+  flex-direction: row; 
+  gap: 2rem;            
+  align-items: center;  
+  justify-content: center;
+  flex-wrap: wrap;      
+}
+
+#section-9 .-left video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* optional: rounded corners */
+}
+
+#section-9 .-right {
+  max-width: 600px;
+  font-family: monospace;
+}
+
+
 c {
 	padding: 1em;
 }
@@ -594,20 +615,6 @@ body {
     color: white;
 }
 
-#section-7 > .-content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/*gap: .5em;*/
-	padding-top: 10vh;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-#section-7 > .-content > .-right > h2 {
-	padding-bottom: 5vh;
-}
-
 c {
 	padding: 1em;
 }
@@ -849,7 +856,7 @@ c {
 	/* Layout fixes for sections */
 	#section-2 .-content,
 	#section-7 .-content,
-	#section-9 #\-content,
+	#section-9 #-content,
 	#section-3,
 	#section-4,
 	#section-5,
@@ -875,7 +882,7 @@ c {
 	#section-2 .-right,
 	#section-7 .-left, 
 	#section-7 .-right,
-	#section-9 #\-left {
+	#section-9 .-left {
 		width: 100%;
 		text-align: center;
 		padding: 0.5rem;
@@ -898,6 +905,13 @@ c {
 	}
 
 	#section-7 .-content .-left  img{
+		width: 70%;
+        height:70%;
+        margin: 0 auto;
+        display: block;
+	}
+
+	#section-9 .-content .-left  video{
 		width: 70%;
         height:70%;
         margin: 0 auto;
