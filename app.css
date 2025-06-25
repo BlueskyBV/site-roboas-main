@@ -427,22 +427,43 @@ c {
 }
 
 #section-4 > .-sponsors {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: .5em;
-	margin-top: 1em;
-	padding: .5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5em;
+  margin-top: 1em;
+  padding: 0.5em;
 }
 
-#section-4 > .-sponsors > img {
-	object-fit: cover;
-	width: 100%;
-	max-width: 500px;
-	box-shadow: 0 0 .5em #0008;
-	border-radius: .5em;
+/* Container with fixed height */
+#section-4 > .-sponsors > .image-frame {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0.5em #0008;
+  border-radius: 0.5em;
+  padding: 1em;
+  background-color: white;
+  overflow: hidden; /* ensure no overlap */
 }
+
+#section-4 > .-sponsors > .image-frame.ubris {
+  background-color: black;
+}
+
+
+/* Image won't exceed container height */
+#section-4 > .-sponsors > .image-frame > img {
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
 
 #section-5 {
 	padding: 1em 0;
@@ -1206,8 +1227,12 @@ c {
   
   #kronospan{
 	background-color: white;
+	height: 500px;
+	width: auto;
   }
 
   #ubris{
 	background-color: black;
+	height: 500px;
+	width: auto;
   }
