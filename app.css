@@ -859,6 +859,18 @@ c {
 		padding: 1rem;
 	}
 
+	#robot-left {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	#robot-left iframe {
+		height: 315px;
+		width: 560px;
+	}
+
 	#section-2 .-left, 
 	#section-2 .-right,
 	#section-7 .-left, 
@@ -909,12 +921,19 @@ c {
 		padding: 1rem 0;
 	}
 
-	#robot-left {
+	#robot-down {
 		display: flex;
-		justify-content: flex-start;   /* still left */
+		flex-direction: column; /* vertical stack on mobile */
+		align-items: center;    /* center children horizontally */
+		gap: 1em;
 	}
 
 	#section-2 video{
+		width: 100%;
+		height: auto;
+	}
+
+	#section-9 video{
 		width: 100%;
 		height: auto;
 	}
