@@ -1293,6 +1293,8 @@ c {
 
   #section-9 p, .misc-mono.genesis{
 	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
   }
 
 
