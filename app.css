@@ -1285,3 +1285,17 @@ c {
 	height: 500px;
 	width: auto;
   }
+
+  .misc-mono{
+	font-size: 36px !important;
+	padding-bottom: 5vh;
+  }
+
+  #section-9 p, .misc-mono.genesis{
+	text-align: left;
+  }
+
+
+  #section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8, #section-9, #section-10{
+	padding-bottom: 10vh;
+  }
