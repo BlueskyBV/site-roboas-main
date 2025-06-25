@@ -869,6 +869,22 @@ c {
 		padding: 0.5rem;
 	}
 
+	 #section-4 > .-sponsors {
+		flex-direction: column;  /* stack vertically */
+		align-items: center;
+	}
+
+	#section-4 > .-sponsors > .image-frame {
+		height: auto;       /* let height adjust naturally */
+		max-width: 90vw;    /* max width near viewport width */
+		padding: 0.5em;
+	}
+
+	#section-4 > .-sponsors > .image-frame > img {
+		max-width: 100%;   /* image fills container width */
+		height: auto;      /* maintain aspect ratio */
+	}
+
 	#section-7 .-content .-left  img{
 		width: 70%;
         height:70%;
