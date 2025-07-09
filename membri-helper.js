@@ -33,17 +33,6 @@ const membersData = [
 		description: "Neatza! Știi omul ăla care face mereu echipa să râdă chiar și în cele mai nasoale momente? Nu, nu sunt eu! Eu sunt David! Glumesc, glumesc! Îmi place să cred că pot să readuc echipa la viață oricât de moartă ar fi. Sunt în clasa a X-a B și mă ocup cu proiectarea 3D (dar și șurubareala la mecatronica) în cadrul echipei RoboAs.Sunt mereu la datorie să dau o mână de ajutor coechiperilor mei și să vin cu idei. Îmi place cam tot ce e legat de tehnologie(Arduino/lego), mai ales dacă îmi pot face vizibilă contribuția. În general timpul liber mi-l umplu cu o grămadă de activități artistice :cor, fanfară dar și NSS, ACSL și diferite cercuri de mate. PS de o bună perioadă tot încerc să învăț sa gătesc, dar nu-mi iese, cam atât :)",
 	},
 	{
-		name: "Ana Bătătorescu",
-		class: 2029,
-		classIndex: "A",
-		birth: new Date(2010, 1, 15, 0, 0) * 1,
-		descriptionImage: "static/photo/Ana.jpg",
-		thumbnailImage: "static/photo/Ana.jpg",
-		passions: "Robotica, Lego, Lectura",
-		roles: [1],
-		description: "Sunt o persoană pasionată de tehnologie, logică și lucrul în echipă. Îmi place să găsesc soluții creative la probleme și să învăț constant lucruri noi.",
-	},
-	{
 		name: "Anne Stavarache",
 		class: 2029,
 		classIndex: "A",

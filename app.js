@@ -65,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Initialize second slideshow
 	showSlides2(slideIndex2);
 
+	showSlides3(slideIndex3);
+
 	// Initialize video modal
 	initVideoModal();
 });
@@ -181,6 +183,39 @@ function plusSlides2(n) {
 function currentSlide2(n) {
 	showSlides2(slideIndex2 = n);
 }
+
+//Slideshow 3
+
+let slideIndex3 = 1;
+
+function plusSlides3(n) {
+  showSlides3(slideIndex3 += n);
+}
+
+function currentSlide3(n) {
+  showSlides3(slideIndex3 = n);
+}
+
+function showSlides3(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides2");
+  let dots = document.getElementsByClassName("dot2");
+
+  if (n > slides.length) { slideIndex3 = 1 }
+  if (n < 1) { slideIndex3 = slides.length }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex3 - 1].style.display = "block";
+  dots[slideIndex3 - 1].classList.add("active");
+}
+
 
 // Video modal
 function initVideoModal() {
