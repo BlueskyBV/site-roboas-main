@@ -300,16 +300,56 @@
 						</a>
 					</div>
 				</div>
+				<style>
+				.pdf-desktop {
+					display: block;
+					width: 500px;
+					height: 750px;
+				}
+
+				.pdf-desktop embed {
+					width: 500px;
+					height: 750px;
+				}
+
+				.pdf-mobile {
+					display: none;
+					margin: 20px 0;
+				}
+
+				@media only screen and (max-width: 768px) {
+					.pdf-desktop {
+					display: none;
+					}
+
+					.pdf-mobile {
+					display: block;
+					}
+				}
+				</style>
+
 				<div id="materials">
-					<div id="robot-left">
-						<embed src="static/notebook.pdf" width="500px" height="750px" type="application/pdf">
-						<h2>Team notebook</h2>
+				<div id="robot-left">
+					<div class="pdf-desktop">
+					<embed src="static/notebook.pdf" type="application/pdf">
 					</div>
-					<div id="robot-right">
-						<embed src="static/portofolio.pdf" width="500px" height="750px" type="application/pdf">
-						<h2>Team portofolio</h2>
+					<div class="pdf-mobile">
+					<a href="static/notebook.pdf" target="_blank">📄 View Team Notebook (PDF)</a>
 					</div>
+					<h2>Team notebook</h2>
 				</div>
+
+				<div id="robot-right">
+					<div class="pdf-desktop">
+					<embed src="static/portofolio.pdf" type="application/pdf">
+					</div>
+					<div class="pdf-mobile">
+					<a href="static/portofolio.pdf" target="_blank">📄 View Team Portfolio (PDF)</a>
+					</div>
+					<h2>Team portofolio</h2>
+				</div>
+				</div>
+
 			</div>
 		</div>
 		<div id="section-3">
