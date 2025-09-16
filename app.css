@@ -1833,4 +1833,12 @@ c {
   #section-2 h2{
 	padding-left: 50px;
   }
+
+  #section-7 h2{
+	padding-left: 100px;
+  }
+
+  #section-7 p{
+	text-align: center;
+  }
 }
