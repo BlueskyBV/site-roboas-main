@@ -464,7 +464,7 @@ c {
 
 /* Container with fixed height */
 #section-4 > .-sponsors > .image-frame {
-  height: 200px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -852,13 +852,16 @@ c {
     border-radius: 0 3px 3px 0;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 768px) {
 	/* General typography */
-	h1, p, li, a {
+	h1, p, li, a, h3 {
 		font-size: 15px;
 		line-height: 1.4;
 	}
 
+	  #section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8, #section-9, #section-10{
+		padding-bottom: 20px;
+	}
 	/* Layout fixes for sections */
 	#section-2 .-content,
 	#section-7 .-content,
@@ -911,7 +914,12 @@ c {
 	#section-9 .-left {
 		width: 100%;
 		text-align: center;
-		padding: 0.5rem;
+		padding: 5rem;
+	}
+
+	#section-7 .-left{
+		width: 400px !important;
+		height: 325px !important;
 	}
 
 	 #section-4 > .-sponsors {
@@ -920,7 +928,7 @@ c {
 	}
 
 	#section-4 > .-sponsors > .image-frame {
-		height: auto;       /* let height adjust naturally */
+		height: 100px;       /* let height adjust naturally */
 		max-width: 90vw;    /* max width near viewport width */
 		padding: 0.5em;
 	}
@@ -937,9 +945,9 @@ c {
         display: block;
 	}
 
-	#section-9 .-content .-left  video{
-		width: 70%;
-        height:70%;
+	#section-9 .-content .-left  iframe{
+		width: 400px;
+        height: 275px;
         margin: 0 auto;
         display: block;
 	}
@@ -947,7 +955,7 @@ c {
 	#section-9 #-content #-left iframe {
 		width: 300px !important;
 		height: 500px !important;
-	  }
+	}
 	  
 	#robot-down {
 		flex-direction: column !important;
@@ -981,11 +989,6 @@ c {
 	#materials embed {
 		width: 100%;
 		height: 500px;
-	}
-
-	#section-2 video{
-		width: 100%;
-		height: auto;
 	}
 
 	#section-9 video{
@@ -1031,12 +1034,56 @@ c {
 	.hide-on-mobile {
 		display: none !important;
 	}
+
+	#section-11 > .-content {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 1rem;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	/* ensure children don't force a horizontal layout */
+	#section-11 > .-content > .-left,
+	#section-11 > .-content > .-right {
+		width: 100% !important;
+		flex: 0 0 auto !important;
+		min-width: 0;         /* important to prevent overflow inside flex items */
+		padding: 0 !important;
+		float: none !important;
+	}
+
+	/* make media responsive and centered */
+	#section-11 .-right img,
+	#section-11 .-right iframe {
+		width: 400px !important;
+		height: 275px !important;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#section-11 .-content .-right img, #section-11 .-content .-left iframe{
+		width: 400px;
+		height: 275px;
+	}
+
+	#section-2 .-content .-right img{
+		width: 450px;
+		height: 300px;
+	}
+
+	#section-2 .-content .-right {
+		display: flex;
+		justify-content: center; /* centers the image horizontally */
+	}
+
+	#section-2 .-content .-left p{
+		text-align: left;
+	}
 }
 
-/* Normal layout (already good) */
-/* Keep this for normal view */
-  
-  /* Apply this style only when the video is fullscreen */
   .video-wrapper > video:fullscreen {
 	width: auto;
 	height: 100%;
@@ -1215,7 +1262,7 @@ c {
 	text-decoration: none;
   }
 
-  #social-wrapper, #mobile-social-wrapper h2{
+  #social-wrapper, #mobile-social-wrapper h2, h3{
 	font-size: 30px;
 	font-family: MyFont;
   }
@@ -1525,3 +1572,191 @@ c {
   text-align: center;
 }
 
+#section-11 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+#section-11 .-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+
+#section-11 .-content:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+
+#section-11 .-left,
+#section-11 .-right {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+#section-2 .-right img {
+	width: 600px;
+	height: 400px;
+}
+
+#section-11 .-right img{
+	width: 550px;
+	height: 350px;
+}
+
+#section-7 .-content {
+    display: flex; 
+    align-items: flex-start;
+    gap: 100px; 
+}
+
+#section-7 .-left img {
+    width: 50px;
+    height: 75px;
+}
+
+#section-7 .-right {
+    padding-top: 150px;
+}
+
+
+.hide-on-mobile { display: none; }
+@media (min-width: 768px) {
+  .hide-on-mobile { display: block; }
+}
+
+.hide-on-desktop { display: block; }
+@media (min-width: 768px) {
+  .hide-on-desktop { display: none; }
+}
+
+.carousel {
+  position: relative;
+}
+
+.posts-wrapper {
+  position: absolute;
+  bottom: 10px;          /* distance from bottom of carousel */
+  left: 60%;            /* move to middle */
+  transform: translateX(-50%); /* perfect centering */
+  
+  display: flex;
+  gap: 20px;
+}
+
+
+.post {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.post:hover {
+  border-color: #c20000;
+  color: #c20000;
+}
+
+.post--active {
+  border-color: #c20000;
+  color: #c20000;
+}
+
+#section-7 .-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#section-7 .-left,
+#section-7 .-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align content to the left */
+}
+
+#section-7 .-left img {
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  #section-7 .-content {
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align both left */
+    text-align: left;
+  }
+
+  #section-7 .-left img {
+    width: 400px; /* shrink on mobile */
+    height: auto;
+    padding-right: 75px;
+	padding-bottom: 0px;
+  }
+
+  #section-7 .-right {
+	padding-top: 0px;
+    width: 100%;
+  }
+
+  #section-2 .-content .-right{
+	padding-bottom: 0px;
+  }
+}
+
+/* Container layout */
+#section-12 > .-content {
+    display: flex;
+    flex-direction: row; /* side by side on desktop */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Left and right boxes */
+#section-12 > .-content > .-left,
+#section-12 > .-content > .-right {
+    flex: 1; /* take equal space */
+    text-align: left; /* align text to left */
+}
+
+#section-12 > .-content > .-left{
+	padding-left: 350px;
+}
+
+#section-12 > .-content > .-right{
+	padding-right: 350px;
+}
+
+/* Ensure links inherit left alignment */
+#section-12 > .-content > .-right a{
+    text-align: left;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    #section-12 > .-content {
+        flex-direction: column; /* stack vertically */
+        gap: 1rem;
+    }
+
+    #section-12 > .-content > .-left,
+    #section-12 > .-content > .-right {
+        width: 100%;
+		padding-right: 75px;
+		padding-left: 75px;
+    }
+
+	#section-12 > .-content > .-left h2,
+    #section-12 > .-content > .-right h2 {
+        text-align: left !important;
+    }
+}

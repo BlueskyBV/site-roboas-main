@@ -119,16 +119,5 @@ const membersData = [
 		passions: "Călătorit, Graphic design",
 		roles: [2],
 		description: "Mă numesc Rebecca, am 17 ani și sunt eleva in clasa a X-a. Mǎ consider o persoană empatică, creativă, dar și sociabilǎ. Îmi place să lucrez în echipă și sǎ-mi împǎrtǎșesc ideile cu ceilalți. În plus, sunt o fire devotată, așadar mă implic cu responsabilitate în tot ceea ce fac, cu scopul de a atinge cele mai bune rezultate, atât pentru mine, cât si pentru cei din jur.",
-	},
-	{
-		name: "Daiana Dodan",
-		class: 2028,
-		classIndex: "F",
-		birth: new Date(2008, 10, 2, 0, 0) * 1,
-		descriptionImage: "static/photo/Daiana.JPG",
-		thumbnailImage: "static/photo/Daiana.JPG",
-		passions: "Dezbateri academice, citit, PR",
-		roles: [2],
-		description: "Eu sunt Daiana, am 17 ani și mă consider o persoană creativă, perseverentă, dar și sociabilă. Mă pasionează designul grafic, dezbaterile academice și sunt mereu dispusă să accept provocări noi.",
-	},
+	}
 ]
