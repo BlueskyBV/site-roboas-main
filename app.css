@@ -1751,12 +1751,86 @@ c {
     #section-12 > .-content > .-left,
     #section-12 > .-content > .-right {
         width: 100%;
-		padding-right: 75px;
-		padding-left: 75px;
+		padding-right: 0px;
+		padding-left: 50px;
     }
 
 	#section-12 > .-content > .-left h2,
     #section-12 > .-content > .-right h2 {
         text-align: left !important;
     }
+
+	#section-2 > .-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #section-2 > .-content > .-left,
+    #section-2 > .-content > .-right {
+        width: 100% !important;
+    }
+
+    /* make text stretch wider on mobile */
+    #section-2 > .-content > .-left {
+        flex: unset;
+    }
+}
+
+/* === Override for section-2: left column wider & remove mobile padding === */
+#section-2 > .-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Give the left column more space on desktop */
+#section-2 > .-content > .-left {
+  flex: 2;               /* left gets 2 parts */
+  min-width: 0;
+  padding: 0 !important; /* override earlier 5rem mobile padding */
+  box-sizing: border-box;
+  text-align: left !important;
+}
+
+/* Right column smaller */
+#section-2 > .-content > .-right {
+  flex: 1;               /* right gets 1 part */
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive: stack on mobile, but make left wider (full width) */
+@media (max-width: 768px) {
+  #section-2 > .-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  /* ensure both take full width and remove large padding */
+  #section-2 > .-content > .-left,
+  #section-2 > .-content > .-right {
+    width: 100% !important;
+    padding: 0 1rem !important;   /* small side padding, change to 0 if you want no padding */
+    box-sizing: border-box;
+    text-align: left !important;  /* keep text left-aligned on mobile */
+  }
+
+  /* keep the image responsive */
+  #section-2 > .-content > .-right img {
+    width: 100%;
+    height: auto;
+    max-width: 480px; /* optional cap */
+    display: block;
+    margin: 0 auto;
+  }
+
+  #section-2 h2{
+	padding-left: 50px;
+  }
 }
