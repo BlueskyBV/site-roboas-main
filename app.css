@@ -1857,3 +1857,24 @@ c {
     margin-bottom: 0.5rem;
   }
 }
+
+/* This makes the link take up the full space of the frame */
+/* 1. Make the link behave like the container */
+.image-frame a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* 2. Keep the IDs working but fix the size */
+#kronospan, #ubris {
+    max-width: 100%;   /* Prevents it from going wider than the frame */
+    max-height: 100%;  /* Prevents the massive zoom/height issue */
+    width: auto;       /* Maintains original aspect ratio */
+    height: auto;      /* Maintains original aspect ratio */
+    display: block;
+    object-fit: contain; /* Extra safety to keep the logo inside the box */
+}
