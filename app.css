@@ -1243,7 +1243,7 @@ c {
 
   /* Space between Instagram section and Social section */
 #instagram-wrapper {
-	margin-bottom: 150px; /* Adjust as needed */
+	margin-bottom: 50px; /* Adjust as needed */
   }
   
   /* Layout for all icons in social-wrapper */
@@ -1877,4 +1877,11 @@ c {
     height: auto;      /* Maintains original aspect ratio */
     display: block;
     object-fit: contain; /* Extra safety to keep the logo inside the box */
+}
+
+/* Specifically target the buttons inside the wrapper */
+#instagram-wrapper .insta-block, 
+#social-wrapper .insta-block {
+    margin: 0px 30px !important; /* Adds 25px horizontal space to EVERY button */
+    display: inline-flex;         /* Ensures they stay side-by-side */
 }
