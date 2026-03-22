@@ -22,10 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			e.preventDefault();
 			const target = document.querySelector(this.getAttribute("href"));
 			if (target) {
-				window.scrollTo({
-					top: target.offsetTop - 100,
-					behavior: "smooth"
-				});
+				const top = target.getBoundingClientRect().top + window.scrollY - 100;
+				window.scrollTo({ top, behavior: "smooth" });
 			}
 		})
 	);
@@ -34,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	showSlides2(slideIndex2);
 	showSlides3(slideIndex3);
 	initVideoModal();
+
+	// --- Animations ---
+	initScrollReveal();
 });
 
 let slideIndex = 1;
@@ -125,3 +126,67 @@ function initVideoModal() {
 		}
 	});
 }
+
+/* ============================================================
+   SCROLL REVEAL — uses IntersectionObserver
+   Adds .reveal / .reveal--left / .reveal--right / .reveal--scale
+   classes to key elements, then observes them.
+   ============================================================ */
+function initScrollReveal() {
+	if (!("IntersectionObserver" in window)) {
+		// Fallback: just show everything
+		document.querySelectorAll(".reveal, .reveal-stagger").forEach(el => {
+			el.classList.add("is-visible");
+		});
+		return;
+	}
+
+	// Assign reveal classes to elements that don't already have them
+	const sectionSelectors = [
+		{ sel: "#section-2 .-left",   cls: "reveal reveal--left"  },
+		{ sel: "#section-2 .-right",  cls: "reveal reveal--right" },
+		{ sel: "#section-12 .-right", cls: "reveal reveal--right" },
+		{ sel: "#section-7 .-left",   cls: "reveal reveal--left"  },
+		{ sel: "#section-7 .-right",  cls: "reveal reveal--right" },
+		{ sel: "#section-11 .-content", cls: "reveal"             },
+		{ sel: "#section-9 .-left",   cls: "reveal reveal--left"  },
+		{ sel: "#section-9 .-right",  cls: "reveal reveal--right" },
+		{ sel: "#section-9 #robot-down", cls: "reveal"            },
+		{ sel: "#section-9 #materials",  cls: "reveal"            },
+		{ sel: "#section-5 .-realizari", cls: "reveal"            },
+		{ sel: "#section-8",           cls: "reveal"              },
+		{ sel: "#section-10",          cls: "reveal"              },
+		{ sel: "#section-4 > p",       cls: "reveal"              },
+		{ sel: "#section-5 > p",       cls: "reveal"              },
+	];
+
+	sectionSelectors.forEach(({ sel, cls }) => {
+		document.querySelectorAll(sel).forEach(el => {
+			cls.split(" ").forEach(c => el.classList.add(c));
+		});
+	});
+
+	// Sponsor grid: staggered children
+	const sponsorGrid = document.querySelector("#section-4 > .-sponsors");
+	if (sponsorGrid) sponsorGrid.classList.add("reveal-stagger");
+
+	// Achievements table rows: stagger
+	const tableBody = document.querySelector("#section-5 > .-realizari > tbody");
+	if (tableBody) tableBody.classList.add("reveal-stagger");
+
+	// Observer
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("is-visible");
+				observer.unobserve(entry.target); // animate once
+			}
+		});
+	}, { threshold: 0.12 });
+
+	document.querySelectorAll(".reveal, .reveal-stagger").forEach(el => {
+		observer.observe(el);
+	});
+}
+
+
