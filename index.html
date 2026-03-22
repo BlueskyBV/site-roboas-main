@@ -190,7 +190,7 @@
 			<div class="-content">
 				<div class="-left">
 					<h2 class="misc-mono">Despre noi</h2>
-					<p>RoboAS este clubul de Robotică și Antreprenoriat al Colegiului Național „Andrei Șaguna” din Brașov. În cadrul clubului, lucram în echipe care participă la competiția FIRST® Tech Challenge (FTC), cel mai mare concurs de robotică pentru liceeni din lume. In acest fel învățăm nu doar să proiectăm, construim și programăm roboți, dar și să gestionăm bugete, să dezvoltăm strategii, să organizăm evenimente și să promovăm echipa în comunitate. Prin aceste experiențe, dobândim atât abilități tehnice, cât și competențe antreprenoriale care ne pregătesc pentru viitor.</p>
+					<p>RoboAS este clubul de Robotică și Antreprenoriat al Colegiului Național „Andrei Șaguna" din Brașov. În cadrul clubului, lucram în echipe care participă la competiția FIRST® Tech Challenge (FTC), cel mai mare concurs de robotică pentru liceeni din lume. In acest fel învățăm nu doar să proiectăm, construim și programăm roboți, dar și să gestionăm bugete, să dezvoltăm strategii, să organizăm evenimente și să promovăm echipa în comunitate. Prin aceste experiențe, dobândim atât abilități tehnice, cât și competențe antreprenoriale care ne pregătesc pentru viitor.</p>
 				</div>
 				<div class="-right">
 					<img src="ui/scenaNatio.jpg">
@@ -280,125 +280,17 @@
 					width: 500px;
 					height: 750px;
 				}
-
 				.pdf-desktop embed {
 					width: 500px;
 					height: 750px;
 				}
-
 				.pdf-mobile {
 					display: none;
 					margin: 20px 0;
 				}
-
 				@media only screen and (max-width: 768px) {
-					.pdf-desktop {
-					display: none;
-					}
-
-					.pdf-mobile {
-					display: block;
-					}
-
-					#section-9, 
-					#robot-content, 
-					#robot-content .-content, 
-					#robot-content .-left, 
-					#robot-content .-right,
-					#robot-down,
-					#materials,
-					#materials #robot-left,
-					#materials #robot-right {
-						padding-right: 20px; /* forces content to align left */
-						box-sizing: border-box; /* ensures padding works correctly */
-					}
-
-					#section-9 iframe,
-					#section-9 embed,
-					#section-9 a,
-					#section-9 p,
-					#section-9 h2 {
-						width: 500px !important;
-						max-width: 100% !important;
-						padding-right: 0;
-					}
-
-					#robot-content .-left {
-						padding-left: 0 !important;   /* remove any left padding */
-						margin-left: 0 !important;    /* remove any left margin */
-						width: 100%;                  /* full width of parent */
-						display: block;               /* remove flex if causing issues */
-					}
-
-					#robot-content .-left iframe {
-						width: 100% !important;       /* full width of the div */
-						max-width: 100%;
-						margin: 0;                     /* remove iframe margin */
-						display: block;
-					}
-
-
-					#section-9 iframe{
-						padding-right: 50px;
-						width: 600px !important;
-						height: 275px !important;
-						display: block;
-						margin: 0 auto;
-					}
-
-					#section-9 .-right p{
-						padding-right: 100px;
-						padding-left: 20px;
-					}
-					
-					#section-8, #section-11, #section-6 .misc-mono{
-						padding-left: 50px;
-					}
-
-					#robot-content .-content {
-						display: block; /* stack left and right on mobile */
-					}
-
-					#robot-down, #materials {
-						display: block; /* stack sections vertically */
-					}
-
-					#robot-right a {
-						display: inline-block; /* keep it inline-block for margin adjustments */
-						margin-left: 50px   /* <-- change this value to move it further right */
-					}
-					
-					#robot-right span {
-						display: inline-block; /* keep it inline-block for margin adjustments */
-						margin-right: 80px;     /* <-- change this value to move it further right */
-					}
-
-					/* Move PDF links to the left adjustably */
-					#materials .pdf-mobile a, h2 {
-						display: inline-block;    /* shrink to content width */
-						position: relative;       /* allow shifting */
-						left: -45px;              /* <-- adjust this value to move left or right */
-					}
-
-					#section-4 h2{
-						padding-left: 75px;
-					}
-
-					#section-9 h2{
-						padding-left: 35px;
-					}
-
-					  #section-6 > h2{
-						text-align: center;
-						padding-bottom: 5vh;
-					}
-					
-					h2.misc-mono {
-						text-align: center;
-						margin: 0 auto 20px auto; /* centers + gives bottom space */
-						padding: 0; /* remove leftover padding */
-						}
-
+					.pdf-desktop { display: none; }
+					.pdf-mobile { display: block; }
 				}
 				</style>
 				<div id="materials">
@@ -425,95 +317,6 @@
 
 			</div>
 		</div>
-		<!--
-		<div id="section-3">
-			<span id="echipa"></span>
-			<h2 class="misc-mono">Membrii echipei</h2>
-			<p></p>Apasă pe fiecare pentru mai multe detalii.</p>
-			<div class="-sub"></div>
-			<div class="-anterior">
-				<h3 class = "misc-mono">Foști membri</h3>
-				<ul>
-					<li>Angel Huminic</li>
-					<li>Miruna Lungu</li>
-					<li>Daria Marica</li>
-					<li>Mihnea Toader</li>
-					<li>Cesare Platano</li>
-					<li>Diana Catana</li>
-					<li>Valentin Belciu</li>
-					<li>Andrei Ene</li>
-					<li>Ovidiu Antal</li>
-					<li>Ioana Neguț</li>
-					<li>Andrei Drăgoi</li>
-					<li>Daria Damian</li>
-					<li>Răzvan Boie</li>
-					<li>Darius Ungureanu</li>
-					<li>Adrian Cucoș</li>
-					<li>Victor Gheorghe</li>
-					<li>Andrei Chițu</li>
-					<li>Andrada Marica</li>
-					<li>Vlad Simion</li>
-					<li>Sergiu Blaj</li>
-					<li>Andrei Popică</li>
-					<li>Sebastian Pomârleanu</li>
-					<li>Paul Pintea</li>
-					<li>Mircea Marilă</li>
-					<li>Andrei Balinth</li>
-					<li>Ana Răduș</li>
-					<li>David Iustin Brătucu</li>
-					<li>Maria Vasilescu</li>
-					<li>Mircea Bodean</li>
-					<li>Vlad Ștefan Deaconu</li>
-					<li>Alexia Muncaciu</li>
-					<li>Anastasia Muncaciu</li>
-					<li>Daria Pampu-Romanescu</li>
-					<li>Darius Chițu</li>
-					<li>Rareș Buteică</li>
-					<li>Vlad Cobenciuc</li>
-					<li>David Ioan Abrudan</li>
-					<li>Dennis Bart</li>
-					<li>Flavia Trifu</li>
-					<li>Ioan Iulian Ungureanu</li>
-					<li>Mihnea Andrei Grigore</li>
-					<li>Rareș Garalbatin</li>
-					<li>Andrei Borcoman</li>
-					<li>Dominic Satnoianu</li>
-					<li>George Cărpinișan</li>
-					<li>Ioana Popa</li>
-					<li>Robert Brîndea</li>
-					<li>Teodor Neagoe</li>
-				</ul>
-			</div>
-			<div class="-about" style="opacity: 0; pointer-events: none;">
-				<button onclick="section3ToggleUser(); section3ToggleUser(parseInt(section3CurrentlyOpenedUser) - 1);">&#10094;</button>
-				<div>
-					<img src="https://dummyimage.com/300">
-					<div class="-content">
-						<button class="-close">&times;</button>
-						<h2></h2>
-						<table>
-							<tbody>
-								<tr>
-									<td><b>Vârstă:</b> <span class="-age">16 ani</span></td>
-									<td><b>Clasa:</b> <span class="-class">a XI-a B</span></td>
-								</tr>
-								<tr>
-									<td colspan="2"><b>Pasiuni:</b> <span class="-passion">fructul pasiunii</span></td>
-								</tr>
-							</tbody>
-						</table>
-						<ul class="-roluri">
-							<li data-id="0">Programare</li>
-							<li data-id="1">Mecatronica</li>
-							<li data-id="2">Marketing & PR</li>
-						</ul>
-						<p class="-descriere">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>
-				<button onclick="section3ToggleUser(); section3ToggleUser(parseInt(section3CurrentlyOpenedUser) + 1);">&#10095;</button>
-			</div>
-		</div>
-	-->
 		<div id="section-4">
             <span id="sponsori"></span>
             <h2 class="misc-mono">Sponsori</h2>
@@ -795,11 +598,6 @@
 						<span class="glow-label">roboas@saguna.ro</span>
 					</a>
 					<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11157.845537049632!2d25.58546705!3d45.6415555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b65948657bf%3A0xc9850a50e950e79e!2s%22Andrei%20%C5%9Eaguna%22%20National%20College!5e0!3m2!1sen!2sro!4v1661692474938!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-					<!-- <div id="text-wrapper">
-						<h2>
-							Urmăriți evoluția noastră și luați legătura cu noi.
-						</h2>
-					</div> -->
 				</div>
 			</div>
 			<div id="mobile-only">
@@ -810,11 +608,23 @@
 					  </div>
 					  <span class="glow-label">Instagram</span>
 				  </a>
+					<a href="https://www.facebook.com/roboas19082/">
+						<div class="glow-button-mobile">
+							<i class="fa-brands fa-facebook"></i>
+						</div>
+						<span class="glow-label">Facebook</span>
+					</a>
 					<a href="https://www.tiktok.com/@roboas_009?_t=ZN-8vYfJMIWEY2&_r=1">
 						<div class="glow-button-mobile">
 							<i class="fa-brands fa-tiktok"></i>
 						</div>
 						<span class="glow-label">TikTok</span>
+					</a>
+					<a href="https://www.linkedin.com/in/roboas-roboas-b322872a8/">
+						<div class="glow-button-mobile">
+							<i class="fa-brands fa-linkedin"></i>
+						</div>
+						<span class="glow-label">LinkedIn</span>
 					</a>
 					<a href="mailto:roboas@saguna.ro" id="mail">
 						<div class="glow-button-mobile">
@@ -830,13 +640,13 @@
 				</div>
 			</div>
 			<style media="all">
-				#mobile-only{display:none}
-				#desktop-only{display:block}
-				@media (max-width:800px){
-				#desktop-only {display:none}
-				#mobile-only {display:block}
+				#mobile-only { display: none; }
+				#desktop-only { display: block; }
+				@media (max-width: 800px) {
+					#desktop-only { display: none; }
+					#mobile-only { display: block; }
 				}
-				</style>
+			</style>
 		</div>
 		<script src="ui/carousel.js"></script>
 	</body>

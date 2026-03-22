@@ -46,6 +46,11 @@ button {
 	font-family: 'MyFont', monospace;
 }
 
+/* ---- Center all headings globally ---- */
+h1, h2, h3, h4, .misc-mono {
+	text-align: center;
+}
+
 header {
 	position: fixed;
 	top: 0; left: 0;
@@ -223,7 +228,9 @@ header > .-openmenu > img {
 
 #section-9 .-right {
   max-width: 600px;
+  width: 100%;
   font-family: monospace;
+  box-sizing: border-box;
 }
 
 
@@ -848,234 +855,243 @@ c {
 }
 
 @media only screen and (max-width: 768px) {
-	/* General typography */
-	h1, p, li, a, h3 {
+	/* ---- General ---- */
+	* { box-sizing: border-box; }
+	body { overflow-x: hidden; }
+
+	/* Center everything on mobile */
+	body, p, li, td, th, span, div, a, label {
+		text-align: center;
+	}
+
+	h1, h2, h3, h4, .misc-mono { text-align: center; }
+
+	/* Flex containers center their children */
+	.-content, .-left, .-right,
+	#section-2 > .-content,
+	#section-7 > .-content,
+	#section-11 > .-content,
+	#section-9 .-content {
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	p, li, a, h3 {
 		font-size: 15px;
 		line-height: 1.4;
 	}
 
-	  #section-1, #section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8, #section-9, #section-10{
-		padding-bottom: 20px;
-	}
-	/* Layout fixes for sections */
-	#section-2 .-content,
-	#section-7 .-content,
-	#section-11 .-content
-	#section-9 #-content,
-	#section-3,
-	#section-4,
-	#section-5,
-	#section-8 {
+	/* ---- Header ---- */
+	header > h1 { font-size: 1.4em; }
+	header > ul > li > a { font-size: 1em; }
+	header > ul { gap: 0.6em; flex-wrap: wrap; }
+
+	/* ---- Sections padding ---- */
+	#section-1, #section-2, #section-3, #section-4,
+	#section-5, #section-6, #section-7, #section-8,
+	#section-9, #section-10 { padding-bottom: 20px; }
+
+	/* ---- Section 2 ---- */
+	#section-2 > .-content {
 		flex-direction: column;
 		align-items: center;
 		padding: 1rem;
+		padding-top: 15vh;
 	}
-
-	#section-12 > .slideshow-container {
-		width: 420px;
-	}
-
-	#section-11 .-content {
-		flex-direction: column;
-	}
-
-	#section-11 .-left,
-	#section-11 .-right {
-		width: 100%;
-		padding-left: 25px;
-	}
-
-	#section-11 .-left {
-		margin-bottom: 20px;
-	}
-
-	#robot-left {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	#robot-left iframe {
-		height: 315px;
-		width: 560px;
-	}
-
-	#section-2 .-left, 
-	#section-2 .-right,
-	#section-7 .-left, 
-	#section-11 .-left
-	#section-7 .-right,
-	#section-9 .-left {
-		width: 100%;
-		text-align: center;
-		padding: 5rem;
-	}
-
-	#section-7 .-left{
-		width: 400px !important;
-		height: 325px !important;
-	}
-
-	 #section-4 > .-sponsors {
-		flex-direction: column;  /* stack vertically */
-		align-items: center;
-	}
-
-	#section-4 > .-sponsors > .image-frame {
-		height: 100px;       /* let height adjust naturally */
-		max-width: 90vw;    /* max width near viewport width */
-		padding: 0.5em;
-	}
-
-	#section-4 > .-sponsors > .image-frame > img {
-		max-width: 100%;   /* image fills container width */
-		height: auto;      /* maintain aspect ratio */
-	}
-
-	#section-7 .-content .-left  img{
-		width: 70%;
-        height:70%;
-        margin: 0 auto;
-        display: block;
-	}
-
-	#section-9 .-content .-left  iframe{
-		width: 400px;
-        height: 275px;
-        margin: 0 auto;
-        display: block;
-	}
-
-	#section-9 #-content #-left iframe {
-		width: 300px !important;
-		height: 500px !important;
-	}
-	  
-	#robot-down {
-		flex-direction: column !important;
-		align-items: center;
-	}
-
-	#robot-left,
-	#robot-right {
+	#section-2 > .-content > .-left,
+	#section-2 > .-content > .-right {
 		width: 100% !important;
-		text-align: center;
-		padding: 1rem 0;
+		padding: 0 1rem !important;
+		float: none !important;
 	}
-
-	#robot-down {
-		display: flex;
-		flex-direction: column; /* vertical stack on mobile */
-		align-items: center;    /* center children horizontally */
-		gap: 1em;
+	#section-2 .-content .-right img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
 	}
+	#section-2 .-content .-left p { text-align: center; }
 
-	 #materials {
+	/* ---- Section 7 ---- */
+	#section-7 > .-content {
 		flex-direction: column;
 		align-items: center;
+		padding: 1rem;
+		gap: 1rem;
+	}
+	#section-7 .-left,
+	#section-7 .-right {
+		width: 100% !important;
+		padding: 0 1rem !important;
+		padding-top: 0 !important;
+	}
+	#section-7 .-left img {
+		width: 85% !important;
+		height: auto !important;
+		margin: 0 auto;
+		display: block;
 	}
 
-	#materials #robot-left,
-	#materials #robot-right {
-		flex: 1 1 100%;
+	/* ---- Section 9 (robot) ---- */
+	#section-9 .-content {
+		flex-direction: column !important;
+		align-items: center !important;
+		padding: 0 1rem !important;
+		width: 100% !important;
 	}
-
-	#materials embed {
-		width: 100%;
-		height: 500px;
+	#section-9 .-left,
+	#section-9 .-right {
+		width: 100% !important;
+		max-width: 100% !important;
+		padding: 0 1rem !important;
+		box-sizing: border-box !important;
+		text-align: center !important;
 	}
-
-	#section-9 video{
-		width: 100%;
-		height: auto;
+	#section-9 .-right p,
+	#section-9 .-right h2 {
+		width: 100% !important;
+		max-width: 100% !important;
+		word-wrap: break-word !important;
+		overflow-wrap: break-word !important;
+		white-space: normal !important;
+		text-align: center !important;
+		padding: 0 !important;
+		margin: 0.5rem 0 !important;
 	}
-
-	#section-4 .-sponsors img {
-		width: 45%;
-		margin: 5px;
+	#section-9 .-content .-left iframe {
+		width: 100% !important;
+		height: 220px !important;
+		margin: 0 auto !important;
+		display: block !important;
 	}
-
-	#section-5 .-realizari {
-		width: 100%;
-		font-size: 14px;
-		word-wrap: break-word;
+	#robot-down, #materials {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 100% !important;
 	}
-
-	#section-3 ul {
-		padding-left: 1.5rem;
+	#robot-left, #robot-right {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 100% !important;
+		text-align: center !important;
+		padding: 1rem 0 !important;
 	}
-
-	#section-3 .-about {
-		width: 95%;
+	#robot-left iframe {
+		width: 100% !important;
+		height: 280px !important;
 	}
-
-	#section-3 .-about img {
-		width: 100%;
-		height: auto;
+	#section-9 a {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 100% !important;
+		text-align: center !important;
 	}
-
-	#section-3 .-controls button {
-		font-size: 18px;
-		padding: 10px;
+	.misc-mono.genesis {
+		text-align: center !important;
+		width: 100% !important;
+		font-size: 24px !important;
+		display: block !important;
 	}
+	#materials embed { width: 100%; height: 400px; }
+	#section-9 video { width: 100%; height: auto; }
+	.pdf-desktop { display: none !important; }
+	.pdf-mobile { display: block !important; }
 
-	#section-8 .slideshow-container img {
-		width: 100%;
-		height: auto;
-	}
-
-	/* Hide elements if needed */
-	.hide-on-mobile {
-		display: none !important;
-	}
-
+	/* ---- Section 11 ---- */
 	#section-11 > .-content {
 		display: flex !important;
 		flex-direction: column !important;
 		align-items: center;
-		justify-content: flex-start;
 		gap: 1rem;
 		width: 100%;
-		box-sizing: border-box;
 	}
-
-	/* ensure children don't force a horizontal layout */
 	#section-11 > .-content > .-left,
 	#section-11 > .-content > .-right {
 		width: 100% !important;
-		flex: 0 0 auto !important;
-		min-width: 0;         /* important to prevent overflow inside flex items */
-		padding: 0 !important;
+		padding: 0 1rem !important;
 		float: none !important;
 	}
-
-	/* make media responsive and centered */
-	#section-11 .-right img,
-	#section-11 .-right iframe {
-		width: 400px !important;
-		height: 275px !important;
+	#section-11 .-right iframe,
+	#section-11 .-left iframe,
+	#section-11 .-right img {
+		width: 100% !important;
+		height: 220px !important;
 		display: block;
 		margin: 0 auto;
 	}
 
-	#section-11 .-content .-right img, #section-11 .-content .-left iframe{
-		width: 400px;
-		height: 275px;
+	/* ---- Section 4 (sponsors) ---- */
+	#section-4 > .-sponsors {
+		flex-direction: column;
+		align-items: center;
+	}
+	#section-4 > .-sponsors > .image-frame {
+		height: 80px;
+		max-width: 85vw;
+		width: 85vw;
+		padding: 0.5em;
+	}
+	#section-4 > .-sponsors > .image-frame > img {
+		max-width: 100%;
+		height: auto;
 	}
 
-	#section-2 .-content .-right img{
-		width: 450px;
-		height: 300px;
+	/* ---- Section 5 (achievements) ---- */
+	#section-5 .-realizari {
+		width: 100%;
+		font-size: 12px;
+		word-wrap: break-word;
+	}
+	#section-5 .-realizari th,
+	#section-5 .-realizari td {
+		padding: 0.4em 0.3em;
 	}
 
-	#section-2 .-content .-right {
-		display: flex;
-		justify-content: center; /* centers the image horizontally */
+	/* ---- Section 8 (gallery) ---- */
+	#section-8 .slideshow-container { max-width: 100%; }
+	#section-8 .slideshow-container img { width: 100%; height: auto; }
+
+	/* ---- Section 12 ---- */
+	#section-12 {
+		width: 100% !important;
+		padding: 0.75rem 1rem !important;
+		margin: 1rem auto !important;
+	}
+	#section-12 > .-content {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 1rem;
+	}
+	#section-12 > .-content > .-left,
+	#section-12 > .-content > .-right {
+		width: 100% !important;
+		padding: 0 !important;
 	}
 
-	#section-2 .-content .-left p{
-		text-align: left;
+	/* ---- Hide/show ---- */
+	.hide-on-mobile { display: none !important; }
+
+	/* ---- Headings: force block + full width so text-align:center works ---- */
+	.misc-mono,
+	h1, h2, h3, h4 {
+		display: block !important;
+		width: 100% !important;
+		text-align: center !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		box-sizing: border-box !important;
+	}
+	.misc-mono.genesis {
+		font-size: 24px !important;
+		text-align: center !important;
+		display: block !important;
+		width: 100% !important;
+		animation: none !important;
 	}
 }
 
@@ -1385,7 +1401,6 @@ c {
   }
 
   #section-9 p, .misc-mono.genesis{
-	text-align: left;
 	padding-left: 10px;
 	padding-right: 10px;
   }
