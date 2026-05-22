@@ -33,6 +33,38 @@ document.addEventListener("DOMContentLoaded", function () {
 	showSlides3(slideIndex3);
 	initVideoModal();
 
+// --- Donation Toast Logic ---
+	const toast = document.getElementById("donation-toast");
+	const closeToastBtn = document.getElementById("close-toast");
+	const toastLink = document.querySelector(".toast-btn");
+
+	if (toast && closeToastBtn) {
+		// Close when clicking the X
+		closeToastBtn.addEventListener("click", function () {
+			toast.style.display = "none";
+		});
+	}
+
+	if (toast && toastLink) {
+		// Also close the toast if they actually click the link to go donate
+		toastLink.addEventListener("click", function () {
+			toast.style.display = "none";
+		});
+	}
+	// --- Season Dropdown Logic ---
+	const seasonToggleBtn = document.getElementById('btn-season-24-25');
+	const seasonContent = document.getElementById('content-season-24-25');
+
+	if (seasonToggleBtn && seasonContent) {
+		seasonToggleBtn.addEventListener('click', function() {
+			// Toggle the "active" class on the button (flips the arrow)
+			this.classList.toggle('active');
+			
+			// Toggle the "show" class on the content (slides it down)
+			seasonContent.classList.toggle('show');
+		});
+	}
+
 	// --- Animations ---
 	initScrollReveal();
 });

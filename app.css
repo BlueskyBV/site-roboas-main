@@ -2119,3 +2119,314 @@ header {
 		transform: none !important;
 	}
 }
+
+#section-donatii {
+    /* The animated purple gradient from your socials section */
+    background: linear-gradient(145deg, #000, #8a2be2, #000);
+    background-size: 400% 400%;
+    animation: shimmer 8s ease infinite;
+    
+    /* Box styling */
+    padding: 3em 1.5rem;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    max-width: 1000px;
+    margin: 4em auto; /* Creates space above and below the box */
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+#section-donatii > h2 {
+    padding-bottom: 3vh;
+    text-shadow: 0 0 10px #8a2be2; /* Extra glow for the title */
+}
+
+#section-donatii .-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
+}
+
+#section-donatii p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* The styled card for bank details */
+.donatii-box {
+    background: rgba(0, 0, 0, 0.85); /* Darkened to contrast the purple background */
+    border: 2px solid var(--col-mov);
+    border-radius: 12px;
+    padding: 2em;
+    max-width: 500px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Subtle hover pop effect */
+.donatii-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 2.5em rgba(179, 51, 255, 0.5);
+}
+
+.donatii-box h3 {
+    color: var(--col-galben);
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'MyFont', monospace;
+}
+
+.donatii-box p {
+    font-size: 16px;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5em;
+    text-align: left !important;
+}
+
+.donatii-box p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    #section-donatii {
+        padding: 2em 1rem !important;
+        margin: 2em auto !important;
+    }
+
+    .donatii-box {
+        padding: 1.5em !important;
+        /* Ensure it doesn't hit the screen edges */
+        width: 90vw !important; 
+    }
+
+    .donatii-box h3 {
+        font-size: 1.2em !important;
+    }
+
+    .donatii-box p {
+        font-size: 14px !important; /* Slightly smaller text to prevent line-breaking weirdness */
+        word-break: break-word; /* Prevents long IBANs from breaking the layout */
+    }
+}
+
+.donation-toast {
+    position: fixed;
+    top: 140px; /* Moved from bottom to top */
+    right: 30px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--col-mov);
+    border-radius: 16px;
+    padding: 25px 30px; /* Larger padding makes the box bigger */
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 10000;
+    animation: slideInRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toast-content p {
+    margin: 0;
+    font-size: 18px !important; /* Larger text */
+    text-align: left !important;
+    color: white;
+    font-weight: 500;
+}
+
+.toast-btn {
+    background: var(--col-mov);
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 20px; /* Larger button */
+    border-radius: 8px;
+    font-size: 16px !important; /* Larger button text */
+    font-weight: bold;
+    text-align: center !important;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.toast-btn:hover {
+    background: var(--col-galben);
+    color: black !important;
+    transform: scale(1.05);
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-top: -25px; /* Aligns the X to the top right */
+    opacity: 0.6;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.toast-close:hover {
+    opacity: 1;
+    color: var(--col-galben);
+}
+
+/* Desktop animation */
+@keyframes slideInRight {
+    from { transform: translateX(150%); }
+    to { transform: translateX(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .donation-toast {
+        bottom: auto !important;
+        top: 80px !important; /* Appears right under the header */
+        right: 50% !important;
+        width: 90vw !important;
+        box-sizing: border-box;
+        animation: slideDownMobile 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        
+        /* Adjusted padding to give the absolute X button some room */
+        padding: 25px 15px 15px 15px !important; 
+    }
+
+    /* Force the content container to stretch the full width */
+    .toast-content {
+        flex: 1 !important;
+        width: 100% !important;
+        align-items: center !important; 
+    }
+
+    /* Center the text across the whole box */
+    .toast-content p {
+        text-align: center !important; 
+        width: 100% !important;
+    }
+
+    /* Make the button stretch across the whole box too */
+    .toast-btn {
+        width: 100% !important; 
+        box-sizing: border-box !important;
+    }
+
+    /* Float the 'X' in the corner so it doesn't push the text to the side */
+    .toast-close {
+        position: absolute !important;
+        top: 5px !important;
+        right: 15px !important;
+        margin-top: 0 !important;
+    }
+
+    @keyframes slideDownMobile {
+        from { top: -100px; opacity: 0; transform: translateX(50%); }
+        to { top: 80px; opacity: 1; transform: translateX(50%); }
+    }
+}
+
+.season-dropdown {
+    width: 100%;
+    max-width: 100%; /* Overrides the previous 1000px limit */
+    margin: 3em 0; /* Removes the auto-centering margins on the sides */
+    border-top: 2px solid var(--col-mov);
+    border-bottom: 2px solid var(--col-mov);
+    border-left: none; /* Removes side borders for a flush edge-to-edge look */
+    border-right: none;
+    border-radius: 0; /* Removes rounded corners */
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+}
+
+.dropdown-toggle {
+    width: 100%;
+    background: linear-gradient(145deg, rgba(0,0,0,0.9), rgba(138, 43, 226, 0.2));
+    color: white;
+    padding: 1.5em;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background: linear-gradient(145deg, rgba(0,0,0,0.9), rgba(138, 43, 226, 0.4));
+    box-shadow: inset 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.dropdown-toggle .misc-mono {
+    margin: 0;
+    text-align: left;
+}
+
+/* The arrow icon animation */
+.dropdown-toggle i {
+    color: var(--col-galben);
+    font-size: 1.2em;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dropdown-toggle.active i {
+    transform: rotate(180deg); /* Flips the arrow upside down when open */
+}
+
+/* The hidden content area */
+.dropdown-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    padding: 0 1.5em; /* Keep horizontal padding, but 0 vertical padding when closed */
+}
+
+/* The class we will add with JavaScript to open it */
+.dropdown-content.show {
+    max-height: 3000px; /* A huge number to ensure all content fits */
+    opacity: 1;
+    padding: 2em 1.5em; /* Expands to give the text breathing room */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .season-dropdown {
+        width: 100vw !important; /* Force width to 100% of the viewport */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+        
+        /* Reset borders for a flush look */
+        border-left: none !important;
+        border-right: none !important;
+        border-radius: 0 !important;
+    }
+
+    .dropdown-toggle {
+        padding: 1.2em 1rem !important; /* Ensure text doesn't touch the screen edge */
+    }
+
+    .dropdown-content.show {
+        padding: 1.5em 1rem !important;
+    }
+}

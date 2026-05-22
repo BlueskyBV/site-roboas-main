@@ -21,6 +21,13 @@
 		<!--
 			Created by Tea (si un pic de ajutor de la Varvara) with ❤ and inherited from Domi
 		-->
+		<div id="donation-toast" class="donation-toast">
+			<div class="toast-content">
+				<p>Susține RoboAS să participe la Istanbul Premier Event! 💜</p>
+				<a href="#section-donatii" class="toast-btn">Află cum poți ajuta</a>
+			</div>
+			<button id="close-toast" class="toast-close" aria-label="Close">&times;</button>
+		</div>
 		<header>
 			<h1 class="misc-mono"><a href="#top" style="font-size: 40px;">RoboAS</a></h1>
 			<ul>
@@ -28,6 +35,7 @@
 				<li><a href="#echipa">Echipă</a></li>
 				<li><a href="#sponsori">Sponsori</a></li>
 				<li><a href="#realizari">Realizări</a></li>
+				<li><a href="#donatii">Donații</a></li>
 				<li><a href="#galerie">Galerie</a></li>
 				<li><a href="#social">Social</a></li>
 			</ul>
@@ -44,7 +52,7 @@
 				<div class="slides">
 				  <article class="main-post main-post--active">
 					<div class="main-post__image">
-					  <img src= "ui/scenaNatio.jpg" loading="lazy" />
+					  <img src= "static/regioslider/grup_natio_2.jpg" loading="lazy" />
 					</div>
 					<div class="main-post__content">
 					  <div class="main-post__tag-wrapper">
@@ -55,7 +63,7 @@
 				  </article>
 				  <article class="main-post main-post--not-active">
 					<div class="main-post__image">
-					  <img src="static/verticalSlider/robotHang.jpg" loading="lazy" />
+					  <img src="static/verticalSlider/robot_natio_1.jpg" loading="lazy" />
 					</div>
 					<div class="main-post__content">
 					  <div class="main-post__tag-wrapper">
@@ -215,29 +223,59 @@
 				</div>	
 				<div class="-right">
 					<h2 class="misc-mono">Sezonul actual</h2>
-					<p>Pe 6 septembrie s-a dat startul noului sezon inspirat de arheologie. Investigați puterea artefactelor lumii și dezlegați mistere într-o nouă provocare, DECODE.</p>
+					<p>Pe 6 septembrie s-a dat startul noului sezon inspirat de arheologie. Investigați puterea artefactelor lumii și dezlegați mistere într-o nouă provocare, DECODE. Premiul Innovate Award – locul I atât la Regională, cât și la Naționala FIRST Tech Challenge România ne-au adus calificarea la FTC Premier Event Istanbul și încă un capitol internațional scris de echipa noastră.</p>
 				</div>
 			</div>
 		</div>
-		<div id="section-11">
+		
+		<div id="section-donatii">
+			<span id="donatii"></span>
+			<h2 class="misc-mono">Susține RoboAS!</h2>
 			<div class="-content">
-				<div class="-left">
-					<h2 class="misc-mono">Rezumat '24 - '25</h2>
-					<p>(Pasiune + Implicare) × Răbdare + Muncă² = Performanță (Națională + Internațională).
-					Rezultatul final al acestei ecuații? Inovație și rezultate.
-					Aceasta este formula RoboAS: prin dedicare și colaborare am obținut locul I la categoria Innovate la Regionala Nord, am repetat succesul la Naționala FIRST Tech Challenge și am reprezentat România în top 4 alianțe la FTC Premier Event din Eindhoven.
-					Sezonul Into the Deep a adus nu doar premii, ci și recunoaștere internațională, confirmând că perseverența și munca în echipă oferă întotdeauna soluția corectă.
-					</p>
+				<p>Ajutați-ne să participăm la <strong>Istanbul Premier Event</strong> și să ne continuăm activitatea! Susținerea voastră ne ajută să ne construim robotul, să participăm și să ne deplasăm la concursuri și îmbunătățeste metodele de educație alternativă în România. Împreună putem face o schimbare!</p>
+				<script async
+  					src="https://js.stripe.com/v3/buy-button.js">
+				</script>
+
+				<stripe-buy-button
+  				buy-button-id="buy_btn_1TXdmZ4Zb0ymfnjriuAmrmrZ"
+  				publishable-key="pk_live_51TONOM4Zb0ymfnjr2vYEXXoPwt820BSNbCycxCaQhZryXrVsrIbodDt136QVbzK7uIlsE1HezZvabzrstbPyBZE200WvdFwqKC"
+				>
+				</stripe-buy-button>
+				<div class="donatii-box">
+					<h3>Date pentru transfer bancar</h3>
+					<p><strong>Beneficiar:</strong> Asociatia “Educatie de Nota 10”</p>
+					<p><strong>Cont IBAN:</strong> RO57RNCB0053184450190001</p>
+					<p><strong>Detalii plată:</strong> Donație pentru RoboAS</p>
 				</div>
-				<div class="-right">
-					<iframe width="560" height="315" 
+			</div>
+		</div>
+		<div class="season-dropdown">
+			<button class="dropdown-toggle" id="btn-season-24-25">
+				<span class="misc-mono">Robotul Nostru '24-'25: Into The Deep</span>
+				<i class="fa-solid fa-chevron-down"></i>
+			</button>
+			
+			<div class="dropdown-content" id="content-season-24-25">
+				<div id="section-11">
+				<div class="-content">
+					<div class="-left">
+					<h2 class="misc-mono">Rezumat '24 - '25</h2>
+						<p>(Pasiune + Implicare) × Răbdare + Muncă² = Performanță (Națională + Internațională).
+						Rezultatul final al acestei ecuații? Inovație și rezultate.
+						Aceasta este formula RoboAS: prin dedicare și colaborare am obținut locul I la categoria Innovate la Regionala Nord, am repetat succesul la Naționala FIRST Tech Challenge și am reprezentat România în top 4 alianțe la FTC Premier Event din Eindhoven.
+						Sezonul Into the Deep a adus nu doar premii, ci și recunoaștere internațională, confirmând că perseverența și munca în echipă oferă întotdeauna soluția corectă.
+						</p>
+					</div>
+					<div class="-right">
+						<iframe width="560" height="315" 
 						src="https://www.youtube.com/embed/1g72RkGQuY4" 
 						title="FTC Romania Championship 2025" 
 						frameborder="0" 
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 						allowfullscreen>
-					</iframe>
-				</div>
+						</iframe>
+					</div>
 			</div>
 			<div class="-content">
 				<div class="-left" >
@@ -248,9 +286,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="section-9">
-			<h2 class="misc-mono">Robotul nostru '24-'25</h2>
-			<div id="robot-content">
+				<div id="section-9">
+					<h2 class="misc-mono">Robotul nostru '24-'25</h2>
+				<div id="robot-content">
 				<div class="-content">
 					<div class="-left">
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/nQ9gmPZpLiU?si=t0xig2js9LCks_OU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -317,6 +355,9 @@
 
 			</div>
 		</div>
+			</div>
+		</div>
+		
 		<div id="section-4">
             <span id="sponsori"></span>
             <h2 class="misc-mono">Sponsori</h2>
@@ -434,11 +475,11 @@
 			</table>
 		</div>
 		<div id="section-8">
-			<h2 class="misc-mono"><span id="galerie"></span>Galerie '24 - '25</h2>
+			<h2 class="misc-mono"><span id="galerie"></span>Galerie</h2>
 			<div class="slideshow-container">
 				<div class="mySlides fade">
 				  <div class="numbertext">1 / 8</div>
-				  <img src="static/regioslider/premiustand.jpg">
+				  <img src="static/regioslider/grup_natio_2.jpg">
 				  <div class="text"></div>
 				</div>
 				<div class="mySlides fade">
@@ -458,12 +499,12 @@
 				</div>
 				<div class="mySlides fade">
 					<div class="numbertext">5 / 8</div>
-					<img src="static/regioslider/oameni.jpg">
+					<img src="static/regioslider/mascota_natio_1.jpg">
 					<div class="text"></div>
 				</div>
 				<div class="mySlides fade">
 					<div class="numbertext">6 / 8</div>
-					<img src="static/regioslider/cuvectron.jpg">
+					<img src="static/regioslider/stand_natio_1.jpg">
 					<div class="text"></div>
 				</div>
 				<div class="mySlides fade">
@@ -473,7 +514,7 @@
 				</div>
 				<div class="mySlides fade">
 					<div class="numbertext">8 / 8</div>
-					<img src="static/regioslider/radio.jpg">
+					<img src="static/regioslider/premiu_natio_3.jpg">
 					<div class="text"></div>
 				</div>
 				<!-- Next and previous buttons -->
@@ -503,12 +544,12 @@
 				</div>
 				<div class="mySlide fade">
 					<div class="numbertext">3 / 10</div>
-					<img src="static/verticalSlider/cararobot.png" style="width:100%">
+					<img src="static/verticalSlider/meci_natio_3.jpg" style="width:100%">
 					<div class="text"></div>
 				</div>
 				<div class="mySlide fade">
 				  <div class="numbertext">4 / 10</div>
-				  <img src="static/verticalSlider/biceps.png" style="width:100%">
+				  <img src="static/verticalSlider/robot_natio_1.jpg" style="width:100%">
 				  <div class="text"></div>
 				</div>
 				<div class="mySlide fade">
@@ -518,7 +559,7 @@
 				</div>
 				<div class="mySlide fade">
 					<div class="numbertext">6 / 10</div>
-					<img src="static/verticalSlider/inaintedemeci.png" style="width:100%">
+					<img src="static/verticalSlider/meci_regio_2.png" style="width:100%">
 					<div class="text"></div>
 				</div>
 				<div class="mySlide fade">
@@ -533,7 +574,7 @@
 				</div>
 				<div class="mySlide fade">
 					<div class="numbertext">9 / 10</div>
-					<img src="static/verticalSlider/dajosrobot.png" style="width:100%">
+					<img src="static/verticalSlider/robot_regio_1.jpg" style="width:100%">
 					<div class="text"></div>
 				</div>
 				<div class="mySlide fade">
